@@ -11,7 +11,9 @@ import CoreData
 class DataStoreManager {
     
     // MARK: - Core Data stack
-        
+    
+    lazy var viewContext: NSManagedObjectContext = persistentContainer.viewContext
+    
     lazy var persistentContainer: NSPersistentContainer = {
         
         let container = NSPersistentContainer(name: "Cartman_sApp")
@@ -22,8 +24,6 @@ class DataStoreManager {
         })
         return container
     }()
-    
-    lazy var viewContext: NSManagedObjectContext = persistentContainer.viewContext
     
     // MARK: - CRUD
     
@@ -39,15 +39,15 @@ class DataStoreManager {
         }
     }
     
-    func obtainMainUser(character: CharacterPerson) -> CorePerson {
+    func savePerson(person: PersonSouthPark) -> CorePerson {
         
         let user = CorePerson(context: viewContext)
-        user.id = Int16(character.id)
-        user.name = character.name
-        user.age = Int16(character.age ?? Int.random(in: 5...55))
-        user.sex = character.sex
-        user.religion = character.religion
-        user.occupation = character.occupation
+        user.id = Int16(person.id)
+        user.name = person.name
+        user.age = Int16(person.age ?? Int.random(in: 5...55))
+        user.sex = person.sex
+        user.religion = person.religion
+        user.occupation = person.occupation
         
         do {
             try viewContext.save()
@@ -58,11 +58,11 @@ class DataStoreManager {
         return user
     }
     
-    func updateMainUser() -> [CorePerson] {
+    func getPersons() -> [CorePerson] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CorePerson")
         
-        if let users = try? viewContext.fetch(fetchRequest) as? [CorePerson], !users.isEmpty {
-            return users
+        if let persons = try? viewContext.fetch(fetchRequest) as? [CorePerson], !persons.isEmpty {
+            return persons
         } else {
             return []
         }

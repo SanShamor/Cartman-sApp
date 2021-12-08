@@ -7,18 +7,17 @@
 
 import Foundation
 
-struct SPPerson: Decodable {
-    let data: [CharacterPerson]
+struct People: Decodable {
+    let data: [PersonSouthPark]
 }
 
-struct CharacterPerson: Decodable {
+struct PersonSouthPark: Decodable {
     let id: Int
     let name: String
     let age: Int?
     let sex: String
     let religion: String?
     let occupation: String?
-    //let episodes: [String]
     
     var description: String {
         """
@@ -29,10 +28,6 @@ struct CharacterPerson: Decodable {
         Occupation: \(occupation ?? "---")
         """
     }
-}
-
-struct Episodes: Decodable {
-    
 }
 
 enum URLS: String {

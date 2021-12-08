@@ -11,8 +11,7 @@ class CharactersList: UIViewController {
     
     @IBOutlet weak var characterTableView: UITableView!
     
-    private var boys = ["Kyle", "Cartman", "Stan", "Kenny"]
-    private var southParkPerson: SPPerson?
+    private var peopleFromSouthPark: People?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +23,14 @@ class CharactersList: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = characterTableView.indexPathForSelectedRow else { return }
-        let person = southParkPerson?.data[indexPath.row]
+        let person = peopleFromSouthPark?.data[indexPath.row]
         let detailCharacterVC = segue.destination as! DetailCharacter
         detailCharacterVC.character = person
     }
     
     private func fetchData(from url: String?) {
-        NetworkManager.shared.fetchData(from: url) { spPerson in
-            self.southParkPerson = spPerson
+        NetworkManager.shared.fetchData(from: url) { spPeople in
+            self.peopleFromSouthPark = spPeople
             self.characterTableView.reloadData()
         }
     }
@@ -40,24 +39,20 @@ class CharactersList: UIViewController {
 
 extension CharactersList: UITableViewDataSource, UITableViewDelegate {
     
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 65
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        southParkPerson?.data.count ?? boys.count
+        peopleFromSouthPark?.data.count ?? 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = characterTableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as! CharacterCell
-        let boy = southParkPerson?.data[indexPath.row]
-        //cell.characterNameLabel.text = boy
-        //cell.characterImageView.image = ""
+        let boy = peopleFromSouthPark?.data[indexPath.row]
         cell.configure(with: boy)
         
         return cell
     }
-    
     
 }

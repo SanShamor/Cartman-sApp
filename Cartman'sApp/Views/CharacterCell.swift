@@ -13,7 +13,6 @@ class CharacterCell: UITableViewCell {
     @IBOutlet weak var characterSexLabel: UILabel!
     @IBOutlet weak var characterReligionLabel: UILabel!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -22,7 +21,8 @@ class CharacterCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-    func configure(with character: CharacterPerson?) {
+    
+    func configure(with character: PersonSouthPark?) {
         characterNameLabel.text = character?.name ?? "Nothing"
         characterSexLabel.text = character?.sex ?? "Nothing"
         characterReligionLabel.text = character?.religion ?? "Nothing"

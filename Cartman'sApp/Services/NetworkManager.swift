@@ -13,7 +13,7 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchData(from url: String?, with complition: @escaping (SPPerson) -> Void) {
+    func fetchData(from url: String?, with complition: @escaping (People) -> Void) {
         guard let stringURL = url else { return }
         guard let url = URL(string: stringURL) else { return }
         
@@ -25,7 +25,7 @@ class NetworkManager {
             
             guard let data = data else { return }
             do {
-                let southPark = try JSONDecoder().decode(SPPerson.self, from: data)
+                let southPark = try JSONDecoder().decode(People.self, from: data)
                 DispatchQueue.main.async {
                     complition(southPark)
                 }
@@ -34,8 +34,8 @@ class NetworkManager {
             }
         }.resume()
     }
-    
-    func fetchCharacter(from url: String?, with complition: @escaping (CharacterPerson) -> Void) {
+    /*
+    func fetchCharacter(from url: String?, with complition: @escaping (PersonSouthPark) -> Void) {
         guard let stringURL = url else { return }
         guard let url = URL(string: stringURL) else { return }
         
@@ -47,7 +47,7 @@ class NetworkManager {
             
             guard let data = data else { return }
             do {
-                let result = try JSONDecoder().decode(CharacterPerson.self, from: data)
+                let result = try JSONDecoder().decode(PersonSouthPark.self, from: data)
                 DispatchQueue.main.async {
                     complition(result)
                 }
@@ -56,4 +56,5 @@ class NetworkManager {
             }
         }.resume()
     }
+     */
 }
