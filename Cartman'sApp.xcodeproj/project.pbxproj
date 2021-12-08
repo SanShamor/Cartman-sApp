@@ -9,16 +9,16 @@
 /* Begin PBXBuildFile section */
 		360175C2275F61A300EE9C27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360175C1275F61A300EE9C27 /* AppDelegate.swift */; };
 		360175C4275F61A300EE9C27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360175C3275F61A300EE9C27 /* SceneDelegate.swift */; };
-		360175C6275F61A300EE9C27 /* CharactersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360175C5275F61A300EE9C27 /* CharactersList.swift */; };
+		360175C6275F61A300EE9C27 /* CharactersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360175C5275F61A300EE9C27 /* CharactersListViewController.swift */; };
 		360175C9275F61A300EE9C27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360175C7275F61A300EE9C27 /* Main.storyboard */; };
 		360175CC275F61A300EE9C27 /* Cartman_sApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 360175CA275F61A300EE9C27 /* Cartman_sApp.xcdatamodeld */; };
 		360175CE275F61A600EE9C27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 360175CD275F61A600EE9C27 /* Assets.xcassets */; };
 		360175D1275F61A600EE9C27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360175CF275F61A600EE9C27 /* LaunchScreen.storyboard */; };
 		360175D9275F64AB00EE9C27 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360175D8275F64AB00EE9C27 /* CharacterCell.swift */; };
-		360175DD275F6B8300EE9C27 /* DetailCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360175DC275F6B8300EE9C27 /* DetailCharacter.swift */; };
+		360175DD275F6B8300EE9C27 /* DetailCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360175DC275F6B8300EE9C27 /* DetailCharacterViewController.swift */; };
 		360175DF275F72BF00EE9C27 /* SouthParkChar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360175DE275F72BF00EE9C27 /* SouthParkChar.swift */; };
 		360175E8275F746400EE9C27 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360175E7275F746400EE9C27 /* NetworkManager.swift */; };
-		360175EA275F9AE500EE9C27 /* FavoritesPersons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360175E9275F9AE500EE9C27 /* FavoritesPersons.swift */; };
+		360175EA275F9AE500EE9C27 /* FavoritesPersonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360175E9275F9AE500EE9C27 /* FavoritesPersonsViewController.swift */; };
 		3663E43B2760B88A00289839 /* CorePerson+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663E4392760B88A00289839 /* CorePerson+CoreDataClass.swift */; };
 		3663E43C2760B88A00289839 /* CorePerson+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663E43A2760B88A00289839 /* CorePerson+CoreDataProperties.swift */; };
 		3663E43E2760BB2600289839 /* DataStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663E43D2760BB2600289839 /* DataStoreManager.swift */; };
@@ -28,17 +28,17 @@
 		360175BE275F61A300EE9C27 /* Cartman'sApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cartman'sApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		360175C1275F61A300EE9C27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		360175C3275F61A300EE9C27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		360175C5275F61A300EE9C27 /* CharactersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersList.swift; sourceTree = "<group>"; };
+		360175C5275F61A300EE9C27 /* CharactersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewController.swift; sourceTree = "<group>"; };
 		360175C8275F61A300EE9C27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		360175CB275F61A300EE9C27 /* Cartman_sApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cartman_sApp.xcdatamodel; sourceTree = "<group>"; };
 		360175CD275F61A600EE9C27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		360175D0275F61A600EE9C27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		360175D2275F61A600EE9C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		360175D8275F64AB00EE9C27 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
-		360175DC275F6B8300EE9C27 /* DetailCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacter.swift; sourceTree = "<group>"; };
+		360175DC275F6B8300EE9C27 /* DetailCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterViewController.swift; sourceTree = "<group>"; };
 		360175DE275F72BF00EE9C27 /* SouthParkChar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SouthParkChar.swift; sourceTree = "<group>"; };
 		360175E7275F746400EE9C27 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		360175E9275F9AE500EE9C27 /* FavoritesPersons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPersons.swift; sourceTree = "<group>"; };
+		360175E9275F9AE500EE9C27 /* FavoritesPersonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPersonsViewController.swift; sourceTree = "<group>"; };
 		3663E4392760B88A00289839 /* CorePerson+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CorePerson+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3663E43A2760B88A00289839 /* CorePerson+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CorePerson+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3663E43D2760BB2600289839 /* DataStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreManager.swift; sourceTree = "<group>"; };
@@ -107,9 +107,9 @@
 		360175E2275F72E700EE9C27 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				360175C5275F61A300EE9C27 /* CharactersList.swift */,
-				360175DC275F6B8300EE9C27 /* DetailCharacter.swift */,
-				360175E9275F9AE500EE9C27 /* FavoritesPersons.swift */,
+				360175C5275F61A300EE9C27 /* CharactersListViewController.swift */,
+				360175DC275F6B8300EE9C27 /* DetailCharacterViewController.swift */,
+				360175E9275F9AE500EE9C27 /* FavoritesPersonsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -223,14 +223,14 @@
 			files = (
 				360175D9275F64AB00EE9C27 /* CharacterCell.swift in Sources */,
 				3663E43C2760B88A00289839 /* CorePerson+CoreDataProperties.swift in Sources */,
-				360175C6275F61A300EE9C27 /* CharactersList.swift in Sources */,
+				360175C6275F61A300EE9C27 /* CharactersListViewController.swift in Sources */,
 				360175C2275F61A300EE9C27 /* AppDelegate.swift in Sources */,
 				360175CC275F61A300EE9C27 /* Cartman_sApp.xcdatamodeld in Sources */,
 				360175E8275F746400EE9C27 /* NetworkManager.swift in Sources */,
-				360175DD275F6B8300EE9C27 /* DetailCharacter.swift in Sources */,
+				360175DD275F6B8300EE9C27 /* DetailCharacterViewController.swift in Sources */,
 				360175C4275F61A300EE9C27 /* SceneDelegate.swift in Sources */,
 				360175DF275F72BF00EE9C27 /* SouthParkChar.swift in Sources */,
-				360175EA275F9AE500EE9C27 /* FavoritesPersons.swift in Sources */,
+				360175EA275F9AE500EE9C27 /* FavoritesPersonsViewController.swift in Sources */,
 				3663E43B2760B88A00289839 /* CorePerson+CoreDataClass.swift in Sources */,
 				3663E43E2760BB2600289839 /* DataStoreManager.swift in Sources */,
 			);

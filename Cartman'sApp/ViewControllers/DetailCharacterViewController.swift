@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailCharacter: UIViewController {
+class DetailCharacterViewController: UIViewController {
     
     @IBOutlet weak var discriptionPersonLabel: UILabel!
     @IBOutlet weak var checkOutLabel: UILabel!
@@ -25,6 +25,7 @@ class DetailCharacter: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         let user = dataStoreManager.savePerson(person: character)
+        checkOutLabel.backgroundColor = .green
         checkOutLabel.text = "\(user.name!) was saved!"
         savingButton.isHidden = true
     }

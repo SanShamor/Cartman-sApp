@@ -5,7 +5,6 @@
 //  Created by Александр on 08.12.2021.
 //
 
-import Foundation
 import CoreData
 
 class DataStoreManager {
@@ -24,20 +23,6 @@ class DataStoreManager {
         })
         return container
     }()
-    
-    // MARK: - CRUD
-    
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
     
     func savePerson(person: PersonSouthPark) -> CorePerson {
         
@@ -58,6 +43,11 @@ class DataStoreManager {
         return user
     }
     
+    func delete(_ person: CorePerson) {
+        viewContext.delete(person)
+        saveContext()
+    }
+    
     func getPersons() -> [CorePerson] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CorePerson")
         
@@ -65,6 +55,20 @@ class DataStoreManager {
             return persons
         } else {
             return []
+        }
+    }
+    
+    // MARK: - CRUD
+    
+    func saveContext () {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
         }
     }
     

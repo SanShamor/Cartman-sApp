@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CharactersList: UIViewController {
+class CharactersListViewController: UIViewController {
     
     @IBOutlet weak var characterTableView: UITableView!
     
@@ -24,7 +24,7 @@ class CharactersList: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = characterTableView.indexPathForSelectedRow else { return }
         let person = peopleFromSouthPark?.data[indexPath.row]
-        let detailCharacterVC = segue.destination as! DetailCharacter
+        let detailCharacterVC = segue.destination as! DetailCharacterViewController
         detailCharacterVC.character = person
     }
     
@@ -37,7 +37,7 @@ class CharactersList: UIViewController {
     
 }
 
-extension CharactersList: UITableViewDataSource, UITableViewDelegate {
+extension CharactersListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 65
@@ -53,6 +53,10 @@ extension CharactersList: UITableViewDataSource, UITableViewDelegate {
         cell.configure(with: boy)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
