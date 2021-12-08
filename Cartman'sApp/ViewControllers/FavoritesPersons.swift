@@ -10,11 +10,20 @@ import UIKit
 class FavoritesPersons: UITableViewController {
     
     private let boys = ["Catrman", "Stan", "Kyle", "Kenny"]
+    private var savedPersons: [CorePerson] = []
+
+    var dataStoreManager = DataStoreManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        tableView.reloadData()
+        print("\(savedPersons.count)")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        savedPersons = dataStoreManager.updateMainUser()
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -24,14 +33,17 @@ class FavoritesPersons: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        boys.count
+        savedPersons.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell") as! CharacterCell
-        let boy = boys[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let boy = savedPersons[indexPath.row].name
+        var content = cell.defaultContentConfiguration()
         
-        cell.characterNameLabel.text = boy
+        content.text = boy
+        cell.contentConfiguration = content
+        
         return cell
     }
 }

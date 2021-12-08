@@ -8,10 +8,10 @@
 import Foundation
 
 struct SPPerson: Decodable {
-    let data: [Character]
+    let data: [CharacterPerson]
 }
 
-struct Character: Decodable {
+struct CharacterPerson: Decodable {
     let id: Int
     let name: String
     let age: Int?

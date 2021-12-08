@@ -9,7 +9,6 @@ import UIKit
 
 class CharacterCell: UITableViewCell {
 
-    @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var characterSexLabel: UILabel!
     @IBOutlet weak var characterReligionLabel: UILabel!
@@ -23,7 +22,7 @@ class CharacterCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-    func configure(with character: Character?) {
+    func configure(with character: CharacterPerson?) {
         characterNameLabel.text = character?.name ?? "Nothing"
         characterSexLabel.text = character?.sex ?? "Nothing"
         characterReligionLabel.text = character?.religion ?? "Nothing"

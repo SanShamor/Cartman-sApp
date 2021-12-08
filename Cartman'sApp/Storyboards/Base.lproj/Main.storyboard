@@ -112,23 +112,42 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Relations"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hu-A0-gLc">
+                                <rect key="frame" x="99.5" y="400.5" width="215" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save This Person In CoreData"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="zzs-pu-L2J" eventType="touchUpInside" id="cGL-Bv-uhP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azK-Z8-mX6">
+                                <rect key="frame" x="186" y="451.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="h54-xy-Q9o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="h54-xy-Q9o" firstAttribute="trailing" secondItem="Ehk-OT-A32" secondAttribute="trailing" constant="15" id="24S-ND-t9V"/>
                             <constraint firstItem="TMJ-hK-bqX" firstAttribute="leading" secondItem="h54-xy-Q9o" secondAttribute="leading" constant="290.5" id="7qF-oh-aYX"/>
+                            <constraint firstItem="6Hu-A0-gLc" firstAttribute="top" secondItem="fvw-z7-Zwf" secondAttribute="bottom" constant="35" id="DiL-2O-gZR"/>
                             <constraint firstItem="fvw-z7-Zwf" firstAttribute="top" secondItem="Ehk-OT-A32" secondAttribute="bottom" constant="20" id="HVz-eP-oZt"/>
+                            <constraint firstItem="azK-Z8-mX6" firstAttribute="centerX" secondItem="qbJ-ib-imR" secondAttribute="centerX" id="Q0x-kV-r4L"/>
                             <constraint firstItem="fvw-z7-Zwf" firstAttribute="centerX" secondItem="qbJ-ib-imR" secondAttribute="centerX" id="Usz-EZ-9em"/>
                             <constraint firstItem="Ehk-OT-A32" firstAttribute="top" secondItem="h54-xy-Q9o" secondAttribute="top" constant="15" id="VBd-rj-BZU"/>
+                            <constraint firstItem="azK-Z8-mX6" firstAttribute="top" secondItem="6Hu-A0-gLc" secondAttribute="bottom" constant="20" id="aaH-Ur-0Fe"/>
                             <constraint firstItem="h54-xy-Q9o" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TMJ-hK-bqX" secondAttribute="trailing" id="fWs-WS-L90"/>
+                            <constraint firstItem="6Hu-A0-gLc" firstAttribute="centerX" secondItem="qbJ-ib-imR" secondAttribute="centerX" id="kQa-ye-zfB"/>
                             <constraint firstItem="Ehk-OT-A32" firstAttribute="leading" secondItem="h54-xy-Q9o" secondAttribute="leading" constant="15" id="lbb-g2-wbR"/>
                             <constraint firstItem="h54-xy-Q9o" firstAttribute="bottom" secondItem="TMJ-hK-bqX" secondAttribute="bottom" constant="40" id="mOb-m5-Bcs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="t1l-Kp-Buk"/>
                     <connections>
-                        <outlet property="discriptionPersonLabel" destination="fvw-z7-Zwf" id="IVr-uv-oEc"/>
+                        <outlet property="checkOutLabel" destination="azK-Z8-mX6" id="3hE-xj-blX"/>
+                        <outlet property="discriptionPersonLabel" destination="fvw-z7-Zwf" id="iaD-rh-xf0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1o-Rj-irO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -157,18 +176,27 @@
         <!--Item-->
         <scene sceneID="gPj-Xp-hVl">
             <objects>
-                <tableViewController id="bIC-Ce-ekU" sceneMemberID="viewController">
+                <tableViewController id="bIC-Ce-ekU" customClass="FavoritesPersons" customModule="Cartman_sApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Q8m-jI-uLu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="characterCell" id="UYy-8T-s9M">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="BHn-TC-a4N" style="IBUITableViewCellStyleDefault" id="UYy-8T-s9M">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UYy-8T-s9M" id="DxQ-8T-LjU">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BHn-TC-a4N">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -189,6 +217,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="b9i-iY-R3A" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6Cu-F2-OJi">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

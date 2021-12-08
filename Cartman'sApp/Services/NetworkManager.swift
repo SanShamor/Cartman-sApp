@@ -35,7 +35,7 @@ class NetworkManager {
         }.resume()
     }
     
-    func fetchCharacter(from url: String?, with complition: @escaping (Character) -> Void) {
+    func fetchCharacter(from url: String?, with complition: @escaping (CharacterPerson) -> Void) {
         guard let stringURL = url else { return }
         guard let url = URL(string: stringURL) else { return }
         
@@ -47,7 +47,7 @@ class NetworkManager {
             
             guard let data = data else { return }
             do {
-                let result = try JSONDecoder().decode(Character.self, from: data)
+                let result = try JSONDecoder().decode(CharacterPerson.self, from: data)
                 DispatchQueue.main.async {
                     complition(result)
                 }
